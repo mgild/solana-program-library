@@ -1660,6 +1660,7 @@ fn command_add_reserve(
 
     let message_1 = Message::new_with_blockhash(
         &[
+            ComputeBudgetInstruction::set_compute_unit_price(30101),
             create_account(
                 &config.fee_payer.pubkey(),
                 &reserve_keypair.pubkey(),
@@ -1695,6 +1696,7 @@ fn command_add_reserve(
 
     let message_2 = Message::new_with_blockhash(
         &[
+            ComputeBudgetInstruction::set_compute_unit_price(30101),
             create_account(
                 &config.fee_payer.pubkey(),
                 &liquidity_supply_keypair.pubkey(),
@@ -1716,6 +1718,7 @@ fn command_add_reserve(
 
     let message_3 = Message::new_with_blockhash(
         &[
+            ComputeBudgetInstruction::set_compute_unit_price(30101),
             approve(
                 &spl_token::id(),
                 &source_liquidity_pubkey,
